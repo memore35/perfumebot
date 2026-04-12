@@ -53,6 +53,7 @@
 
   .result-card{margin-top:10px;background:rgba(37,201,117,0.07);border:1px solid rgba(37,201,117,0.2);border-radius:12px;padding:12px 14px;font-size:13px}
   .result-card.blue{background:rgba(91,198,255,0.07);border:1px solid rgba(91,198,255,0.18)}
+  .result-card.price{background:rgba(212,168,83,0.07);border:1px solid rgba(212,168,83,0.3)}
   .rrow{display:flex;justify-content:space-between;padding:3px 0;color:var(--text2);gap:8px}
   .rrow span:last-child{color:var(--text);font-family:'DM Mono',monospace;text-align:right}
   .rrow.total{border-top:1px solid rgba(37,201,117,0.2);margin-top:6px;padding-top:8px;font-weight:600}
@@ -60,10 +61,17 @@
   .rrow.total span:last-child{font-size:15px}
   .result-card.blue .rrow.total{border-top:1px solid rgba(91,198,255,0.18)}
   .result-card.blue .rrow.total span{color:var(--blue)}
+  .result-card.price .rrow.total{border-top:1px solid rgba(212,168,83,0.3)}
+  .result-card.price .rrow.total span{color:var(--accent)}
   .rname{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.04em;margin-bottom:8px;text-transform:uppercase}
   .sbadge{margin-top:8px;font-size:12px;display:flex;align-items:center;gap:5px}
   .sbadge.ok{color:var(--green)}
-  .sbadge.fail{color:var(--red)}
+
+  .price-ml-header{font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--accent2);margin:10px 0 4px;padding-top:8px;border-top:1px solid rgba(212,168,83,0.15)}
+  .price-ml-header:first-of-type{margin-top:0;padding-top:0;border-top:none}
+  .price-row-inner{display:flex;justify-content:space-between;padding:2px 0;font-size:12px;color:var(--text2);gap:8px}
+  .price-row-inner span:last-child{color:var(--text);font-family:'DM Mono',monospace}
+  .price-margen{color:var(--green) !important;font-weight:600}
 
   .typing-b{background:var(--bubble-bot);border:1px solid var(--border);border-radius:16px;border-bottom-left-radius:4px;padding:12px 16px;display:flex;gap:5px;align-items:center}
   .dot{width:6px;height:6px;background:var(--text3);border-radius:50%;animation:bk 1.2s infinite}
@@ -82,57 +90,71 @@
   .sc{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:12px;color:var(--text2);white-space:nowrap;cursor:pointer;flex-shrink:0}
   .sc.active-subtab{color:var(--accent);border-color:rgba(212,168,83,0.35)}
 
+  /* REGISTROS */
   #rec-panel{flex:1;overflow-y:auto;background:var(--bg);padding:14px;-webkit-overflow-scrolling:touch}
   #rec-panel::-webkit-scrollbar{display:none}
   .rh{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
   .rh h2{font-size:14px;font-weight:600;color:var(--text2)}
   .ebtn{background:var(--accent);color:#0a1628;border:none;border-radius:10px;padding:8px 14px;font-size:13px;font-family:'DM Sans',sans-serif;font-weight:600;cursor:pointer}
+
+  /* Navegador de mes */
+  .month-nav{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin-bottom:12px}
+  .month-nav-btn{background:none;border:none;color:var(--accent);font-size:22px;cursor:pointer;padding:0 6px;line-height:1;font-weight:300}
+  .month-nav-btn:disabled{color:var(--text3);cursor:default}
+  .month-nav-label{font-size:15px;font-weight:600;color:var(--text);text-align:center;flex:1}
+
   .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
   .scard{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
   .scard .slabel{font-size:11px;color:var(--text3);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.05em}
   .scard .sval{font-size:18px;font-weight:600;font-family:'DM Mono',monospace}
   .scard.green .sval{color:var(--green)}.scard.gold .sval{color:var(--accent)}
+
   .ri{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:8px}
   .ri-top{display:flex;justify-content:space-between;gap:10px;margin-bottom:5px}
-  .ri-name{font-size:14px;font-weight:500}
-  .ri-date{font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px}
+  .ri-name{font-size:14px;font-weight:700;color:var(--text)}
+  .ri-marca{font-weight:700;color:var(--accent)}
+  .ri-date{font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;white-space:nowrap}
   .ri-bot{display:flex;justify-content:space-between;align-items:center;gap:10px}
   .ri-detail{font-size:12px;color:var(--text2)}
   .ri-gain{font-size:14px;font-weight:600;color:var(--green);font-family:'DM Mono',monospace}
   .sdot{width:7px;height:7px;border-radius:50%;display:inline-block}
-  .sdot.ok{background:var(--green)}.sdot.fail{background:var(--red)}.sdot.pend{background:var(--accent)}
+  .sdot.ok{background:var(--green)}.sdot.pend{background:var(--accent)}
   .empty{text-align:center;padding:40px 20px;color:var(--text3);font-size:14px}
-
-  .month-header{
-    font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
-    color:var(--accent);padding:14px 2px 8px;
-    border-top:1px solid var(--border);
-    margin-top:6px;
-  }
-  .month-header:first-child{border-top:none;margin-top:0;padding-top:2px}
 
   .badge-tipo{font-size:10px;font-weight:600;letter-spacing:0.06em;padding:2px 7px;border-radius:8px;text-transform:uppercase;margin-left:6px}
   .badge-decant{background:rgba(37,201,117,0.15);color:var(--green)}
-  .badge-perf{background:rgba(91,198,255,0.12);color:var(--blue)}
   .badge-disp{background:rgba(212,168,83,0.15);color:var(--accent)}
 
+  /* STATS */
   #stats-panel{flex:1;overflow-y:auto;background:var(--bg);padding:14px;-webkit-overflow-scrolling:touch}
   #stats-panel::-webkit-scrollbar{display:none}
+
+  .stats-toggle{display:flex;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:3px;margin-bottom:16px;gap:3px}
+  .stoggle-btn{flex:1;padding:9px;border:none;border-radius:9px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all 0.2s;background:transparent;color:var(--text2)}
+  .stoggle-btn.active{background:var(--accent);color:#0a1628}
+
+  .stats-month-nav{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin-bottom:14px}
+  .stats-month-nav button{background:none;border:none;color:var(--accent);font-size:22px;cursor:pointer;padding:0 6px;line-height:1;font-weight:300}
+  .stats-month-nav button:disabled{color:var(--text3);cursor:default}
+  .stats-month-nav span{font-size:15px;font-weight:600;color:var(--text)}
+
   .stat-title{font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--text2);margin:18px 0 10px}
   .stat-title:first-child{margin-top:0}
   .stat-kpis{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:4px}
   .kpi{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 12px;text-align:center}
   .kpi .kv{font-size:17px;font-weight:600;font-family:'DM Mono',monospace;color:var(--green)}
   .kpi .kl{font-size:10px;color:var(--text3);margin-top:3px;text-transform:uppercase;letter-spacing:0.04em}
+
   .bar-item{display:flex;align-items:center;gap:8px;margin-bottom:8px}
   .bar-label{font-size:12px;color:var(--text2);width:120px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .bar-wrap{flex:1;height:22px;background:var(--surface2);border-radius:6px;overflow:hidden;position:relative}
+  .bar-wrap{flex:1;height:22px;background:var(--surface2);border-radius:6px;overflow:hidden}
   .bar-fill{height:100%;border-radius:6px;transition:width 0.6s ease;display:flex;align-items:center;justify-content:flex-end;padding-right:6px}
   .bar-fill .bar-val{font-size:11px;font-family:'DM Mono',monospace;color:#0a1628;font-weight:600;white-space:nowrap}
   .bar-fill.male{background:linear-gradient(90deg,#3a8fd4,#5bc6ff)}
   .bar-fill.female{background:linear-gradient(90deg,#c97bbd,#e8a0e8)}
   .bar-fill.neutral{background:linear-gradient(90deg,var(--accent2),var(--accent))}
   .bar-count{font-size:11px;color:var(--text3);width:32px;text-align:right;font-family:'DM Mono',monospace;flex-shrink:0}
+
   .gender-row{display:flex;gap:10px;margin-bottom:14px}
   .gender-card{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
   .gender-card .gc-val{font-size:22px;font-weight:600;font-family:'DM Mono',monospace;margin-bottom:2px}
@@ -140,10 +162,12 @@
   .gender-card.m .gc-val{color:#5bc6ff}
   .gender-card.f .gc-val{color:#e8a0e8}
   .gender-card.u .gc-val{color:var(--accent)}
+
   .donut-wrap{display:flex;justify-content:center;align-items:center;margin:10px 0 14px;gap:20px;flex-wrap:wrap}
   .donut-legend{display:flex;flex-direction:column;gap:6px}
   .dl-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text2)}
   .dl-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
   .month-bar{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:8px}
   .mb-top{display:flex;justify-content:space-between;margin-bottom:8px;gap:10px}
   .mb-name{font-size:13px;font-weight:500}
@@ -151,6 +175,13 @@
   .mb-bar{height:6px;background:var(--surface2);border-radius:3px;overflow:hidden}
   .mb-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent2),var(--accent))}
   .stats-loading{text-align:center;padding:40px 20px;color:var(--text3);font-size:14px}
+
+  /* Lista ventas mensual */
+  .sale-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);gap:8px}
+  .sale-row:last-child{border-bottom:none}
+  .sale-row-name{font-size:13px;font-weight:600;color:var(--text)}
+  .sale-row-sub{font-size:11px;color:var(--text2);margin-top:2px}
+  .sale-row-gain{font-size:13px;font-weight:600;color:var(--green);font-family:'DM Mono',monospace;white-space:nowrap}
 
   #cfg-panel{flex:1;overflow-y:auto;background:var(--bg);padding:14px;-webkit-overflow-scrolling:touch}
   .ccard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px}
@@ -165,6 +196,7 @@
 </head>
 <body>
 <div id="app">
+
   <div id="header">
     <div class="logo">P</div>
     <div class="hinfo">
@@ -186,7 +218,10 @@
   <div class="panel active" id="panel-decants">
     <div id="messages-decants" class="chat-messages">
       <div class="msg bot">
-        <div class="bubble">Hola 👋 Registra decants.<br><br>Ejemplo: <strong>profondo edp 3ml</strong><br>Con descuento: <strong>profondo edp 5ml 10%</strong></div>
+        <div class="bubble">Hola 👋 Registra decants o consulta precios.<br><br>
+          <strong>Venta:</strong> profondo edp 3ml<br>
+          <strong>Con descuento:</strong> profondo edp 5ml 10%<br>
+          <strong>Precio:</strong> precio erba pura</div>
         <div class="msg-time">ahora</div>
       </div>
     </div>
@@ -197,9 +232,10 @@
       <div class="sc" onclick="fillInput('decants','erba pura 3ml')">erba pura 3ml</div>
       <div class="sc" onclick="fillInput('decants','layton 10ml')">layton 10ml</div>
       <div class="sc" onclick="fillInput('decants','ombre leather 5ml 10%')">ombre 5ml 10%</div>
+      <div class="sc" onclick="fillInput('decants','precio erba pura')">💰 precio</div>
     </div>
     <div class="input-area">
-      <textarea id="msg-input-decants" class="msg-input" placeholder="Ej: profondo edp 3ml o cherry 5ml 10%" rows="1" onkeydown="handleKey(event,'decants')" oninput="autoResize(this)"></textarea>
+      <textarea id="msg-input-decants" class="msg-input" placeholder="Ej: profondo edp 3ml · precio erba pura" rows="1" onkeydown="handleKey(event,'decants')" oninput="autoResize(this)"></textarea>
       <button class="send-btn" onclick="handleSendDecants()">
         <svg viewBox="0 0 24 24"><path d="M2 21L23 12 2 3v7l15 2-15 2z"/></svg>
       </button>
@@ -210,7 +246,9 @@
   <div class="panel" id="panel-perfumes">
     <div id="messages-perfumes" class="chat-messages">
       <div class="msg bot">
-        <div class="bubble">Aquí registras perfumes sellados.<br><br><strong>Compra:</strong> jo milano royale comprado 90ml 40000 lujo<br><strong>Venta:</strong> jo milano royale vendido 55000</div>
+        <div class="bubble">Aquí registras perfumes sellados.<br><br>
+          <strong>Compra:</strong> jo milano royale comprado 90ml 40000 lujo<br>
+          <strong>Venta:</strong> jo milano royale vendido 55000</div>
         <div class="msg-time">ahora</div>
       </div>
     </div>
@@ -241,14 +279,27 @@
         <div class="sc" id="subtab-stock" onclick="showRegSubtab('stock')">Stock disponible</div>
       </div>
 
+      <!-- Ventas decants con navegación mensual -->
       <div id="reg-subpanel-decants">
+        <div class="month-nav">
+          <button class="month-nav-btn" id="rec-prev-btn" onclick="recNavMes(1)">‹</button>
+          <div class="month-nav-label" id="rec-mes-label">—</div>
+          <button class="month-nav-btn" id="rec-next-btn" onclick="recNavMes(-1)">›</button>
+        </div>
         <div class="sgrid">
-          <div class="scard green"><div class="slabel">Ganancia total</div><div class="sval" id="sum-g">$0</div></div>
-          <div class="scard gold"><div class="slabel">Ventas</div><div class="sval" id="sum-c">0</div></div>
+          <div class="scard green">
+            <div class="slabel" id="rec-ganancia-label">Ganancia</div>
+            <div class="sval" id="sum-g">$0</div>
+          </div>
+          <div class="scard gold">
+            <div class="slabel" id="rec-ventas-label">Ventas</div>
+            <div class="sval" id="sum-c">0</div>
+          </div>
         </div>
         <div id="rec-list"><div class="empty">Sin ventas aún.</div></div>
       </div>
 
+      <!-- Stock disponible -->
       <div id="reg-subpanel-stock" style="display:none;">
         <div class="sgrid" id="stock-kpis" style="display:none">
           <div class="scard green"><div class="slabel">Inversión total</div><div class="sval" id="stock-inv">$0</div></div>
@@ -262,7 +313,23 @@
   <!-- ESTADÍSTICAS -->
   <div class="panel" id="panel-stats">
     <div id="stats-panel">
-      <div id="stats-content"><div class="stats-loading">Cargando estadísticas…</div></div>
+      <div class="stats-toggle">
+        <button class="stoggle-btn active" id="stoggle-general" onclick="setStatsMode('general')">General</button>
+        <button class="stoggle-btn" id="stoggle-mensual" onclick="setStatsMode('mensual')">Mensual</button>
+      </div>
+
+      <div id="stats-general-content">
+        <div class="stats-loading">Cargando estadísticas…</div>
+      </div>
+
+      <div id="stats-mensual-content" style="display:none;">
+        <div class="stats-month-nav">
+          <button id="stats-prev-btn" onclick="statsNavMes(1)">‹</button>
+          <span id="stats-mes-label">—</span>
+          <button id="stats-next-btn" onclick="statsNavMes(-1)">›</button>
+        </div>
+        <div id="stats-mensual-body"><div class="stats-loading">Cargando…</div></div>
+      </div>
     </div>
   </div>
 
@@ -277,12 +344,14 @@
       <div class="ccard">
         <h3>Cómo usar</h3>
         <div class="smini"><div class="smini-n">1</div><div class="smini-t"><strong>Decants:</strong> profondo edp 3ml o profondo edp 5ml 10%</div></div>
-        <div class="smini"><div class="smini-n">2</div><div class="smini-t"><strong>Perfumes compra:</strong> jo milano royale comprado 90ml 40000 lujo</div></div>
-        <div class="smini"><div class="smini-n">3</div><div class="smini-t"><strong>Perfumes venta:</strong> jo milano royale vendido 55000</div></div>
-        <div class="smini"><div class="smini-n">4</div><div class="smini-t"><strong>Stats:</strong> ahora usa la columna <strong>Genero</strong> de Base_Precios (M/F/U)</div></div>
+        <div class="smini"><div class="smini-n">2</div><div class="smini-t"><strong>Consulta precio:</strong> precio erba pura</div></div>
+        <div class="smini"><div class="smini-n">3</div><div class="smini-t"><strong>Perfumes compra:</strong> jo milano royale comprado 90ml 40000 lujo</div></div>
+        <div class="smini"><div class="smini-n">4</div><div class="smini-t"><strong>Perfumes venta:</strong> jo milano royale vendido 55000</div></div>
+        <div class="smini"><div class="smini-n">5</div><div class="smini-t"><strong>Stats Mensual:</strong> navegá entre meses con las flechas ‹ ›</div></div>
       </div>
     </div>
   </div>
+
 </div>
 
 <script>
@@ -292,21 +361,20 @@ let records = [];
 let perfumeStock = [];
 let regSubtab = 'decants';
 let statsLoaded = false;
+let statsMode = 'general';
 
-function normGenero(g){
+// 0 = mes más reciente, 1 = mes anterior, etc.
+let recMesIdx = 0;
+let statsMesIdx = 0;
+
+const MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+
+/* ══ HELPERS ══ */
+function normGenero(g) {
   const x = String(g || '').trim().toUpperCase();
   if (x === 'M') return 'M';
   if (x === 'F') return 'F';
   return 'U';
-}
-
-async function init() {
-  document.getElementById('script-url').value = SCRIPT_URL;
-  try {
-    await cargarHistorialDesdeSheets();
-  } catch (e) {
-    renderRecords();
-  }
 }
 
 function getTime() {
@@ -340,10 +408,43 @@ function fillInput(modulo, text) {
   el.focus();
 }
 
+/* ══ MESES ══ */
+function mesLabel(fechaStr) {
+  if (!fechaStr) return 'Sin fecha';
+  const parts = String(fechaStr).split(/[-\/]/);
+  if (parts.length < 2) return 'Sin fecha';
+  const month = parseInt(parts[1], 10);
+  if (!month || month < 1 || month > 12) return 'Sin fecha';
+  if (parts.length >= 3) return `${MESES[month - 1]} ${parts[2]}`;
+  return MESES[month - 1];
+}
+
+// Retorna meses únicos, de más antiguo a más reciente
+function getMesesDisponibles() {
+  const seen = new Set();
+  const arr = [];
+  [...records].reverse().forEach(r => {
+    const m = mesLabel(r.fecha);
+    if (!seen.has(m)) { seen.add(m); arr.push(m); }
+  });
+  return arr;
+}
+
+// mesIdx 0 = más reciente
+function getMesActual(idx) {
+  const meses = getMesesDisponibles();
+  if (!meses.length) return null;
+  return meses[meses.length - 1 - idx] || null;
+}
+
+function recordsDelMes(mesStr) {
+  return records.filter(r => mesLabel(r.fecha) === mesStr);
+}
+
+/* ══ TABS ══ */
 async function showTab(t) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-
   document.getElementById('panel-' + t).classList.add('active');
   document.getElementById('tab-' + t).classList.add('active');
 
@@ -352,9 +453,8 @@ async function showTab(t) {
     try { await cargarStockPerfumes(); } catch (e) {}
     showRegSubtab(regSubtab);
   }
-
   if (t === 'stats') {
-    await renderStats();
+    await renderStatsGeneral();
   }
 }
 
@@ -366,24 +466,54 @@ function showRegSubtab(tab) {
   document.getElementById('subtab-stock').classList.toggle('active-subtab', tab === 'stock');
 }
 
-function addMsg(containerId, html, type, card, cardType='decant') {
+/* ══ NAVEGACIÓN MESES ══ */
+function recNavMes(dir) {
+  const meses = getMesesDisponibles();
+  if (!meses.length) return;
+  recMesIdx = Math.max(0, Math.min(meses.length - 1, recMesIdx + dir));
+  renderRecords();
+}
+
+function statsNavMes(dir) {
+  const meses = getMesesDisponibles();
+  if (!meses.length) return;
+  statsMesIdx = Math.max(0, Math.min(meses.length - 1, statsMesIdx + dir));
+  renderStatsMensual();
+}
+
+/* ══ CHAT HELPERS ══ */
+function addMsg(containerId, html, type, card, cardType = 'decant') {
   const msgs = document.getElementById(containerId);
   const div = document.createElement('div');
   div.className = 'msg ' + type;
-
   const b = document.createElement('div');
   b.className = 'bubble';
   b.innerHTML = html;
 
   if (card) {
     const c = document.createElement('div');
-    c.className = 'result-card' + (cardType === 'perfume' ? ' blue' : '');
-
-    if (cardType === 'decant') {
+    if (cardType === 'price') {
+      c.className = 'result-card price';
+      let mlRows = '';
+      (card.precios || []).forEach(p => {
+        const margen = p.venta - p.costo;
+        mlRows += `
+          <div class="price-ml-header">${p.ml}ML</div>
+          <div class="price-row-inner"><span>Costo (decant)</span><span>${money(p.costo)}</span></div>
+          <div class="price-row-inner"><span>Precio cliente</span><span>${money(p.venta)}</span></div>
+          <div class="price-row-inner"><span>Ganancia base</span><span class="price-margen">+${money(margen)}</span></div>
+        `;
+      });
+      c.innerHTML = `
+        <div class="rname">💰 ${card.marca} — ${card.fragancia}</div>
+        ${mlRows || '<div style="color:var(--text3);font-size:12px">Sin precios disponibles</div>'}
+        <div class="sbadge ok" style="margin-top:8px">✓ Datos de Base_Precios</div>
+      `;
+    } else if (cardType === 'decant') {
+      c.className = 'result-card';
       const descRow = Number(card.descuentoMonto || 0) > 0
         ? `<div class="rrow" style="color:var(--red)"><span>Descuento ${card.descuentoPct}%</span><span>-${money(card.descuentoMonto)}</span></div>`
         : '';
-
       c.innerHTML = `
         <div class="rname">${card.marca} — ${card.nombre} ${card.ml}ml</div>
         <div class="rrow"><span>Costo (decant)</span><span>${money(card.costo)}</span></div>
@@ -394,6 +524,7 @@ function addMsg(containerId, html, type, card, cardType='decant') {
         <div class="sbadge ok">✓ Guardado en Google Sheets</div>
       `;
     } else {
+      c.className = 'result-card blue';
       c.innerHTML = `
         <div class="rname">${card.producto} — ${card.tamano || ''}</div>
         <div class="rrow"><span>Categoría</span><span>${card.categoria || '-'}</span></div>
@@ -404,14 +535,12 @@ function addMsg(containerId, html, type, card, cardType='decant') {
         <div class="sbadge ok">✓ Guardado en Google Sheets</div>
       `;
     }
-
     b.appendChild(c);
   }
 
   const t = document.createElement('div');
   t.className = 'msg-time';
   t.textContent = getTime();
-
   div.appendChild(b);
   div.appendChild(t);
   msgs.appendChild(div);
@@ -433,33 +562,49 @@ function removeTyping(id) {
   if (t) t.remove();
 }
 
-async function llamarScript(action, text='') {
+async function llamarScript(action, text = '') {
   const url = text
     ? `${SCRIPT_URL}?action=${encodeURIComponent(action)}&mensaje=${encodeURIComponent(text)}`
     : `${SCRIPT_URL}?action=${encodeURIComponent(action)}`;
-
   const resp = await fetch(url);
   const data = await resp.json();
-
   if (!data.ok) throw new Error(data.error || 'No se pudo procesar');
   return data;
 }
 
+function esPrecio(texto) {
+  return /^precio\s+/i.test(texto.trim());
+}
+
+/* ══ SEND DECANTS ══ */
 async function handleSendDecants() {
   const input = document.getElementById('msg-input-decants');
   const rawText = input.value.trim();
   if (!rawText) return;
-
   input.value = '';
   input.style.height = 'auto';
-
   addMsg('messages-decants', rawText, 'user');
-  showTyping('messages-decants');
 
+  if (esPrecio(rawText)) {
+    const consulta = rawText.replace(/^precio\s+/i, '').trim();
+    showTyping('messages-decants');
+    try {
+      const data = await llamarScript('precio', consulta);
+      removeTyping('messages-decants');
+      addMsg('messages-decants', `Precios para <strong>${data.fragancia}</strong>`, 'bot', {
+        marca: data.marca, fragancia: data.fragancia, precios: data.precios || []
+      }, 'price');
+    } catch (err) {
+      removeTyping('messages-decants');
+      addMsg('messages-decants', `No encontré precios.<br><strong>${err.message}</strong>`, 'bot');
+    }
+    return;
+  }
+
+  showTyping('messages-decants');
   try {
     const data = await llamarScript('decant', rawText);
     removeTyping('messages-decants');
-
     const ml = parseInt(String(data.formato).replace('ML', ''), 10);
     const record = {
       fecha: data.fecha || getDate(),
@@ -474,8 +619,8 @@ async function handleSendDecants() {
       genero: normGenero(data.genero),
       synced: true
     };
-
     records.unshift(record);
+    recMesIdx = 0; // volver al mes más reciente
     addMsg('messages-decants', '✓ Registrado', 'bot', record, 'decant');
     renderRecords();
     statsLoaded = false;
@@ -485,32 +630,24 @@ async function handleSendDecants() {
   }
 }
 
+/* ══ SEND PERFUMES ══ */
 async function handleSendPerfumes() {
   const input = document.getElementById('msg-input-perfumes');
   const rawText = input.value.trim();
   if (!rawText) return;
-
   input.value = '';
   input.style.height = 'auto';
-
   addMsg('messages-perfumes', rawText, 'user');
   showTyping('messages-perfumes');
-
   try {
     const data = await llamarScript('perfume', rawText);
     removeTyping('messages-perfumes');
-
     addMsg('messages-perfumes', '✓ Registrado', 'bot', {
-      tipo: data.tipo,
-      producto: data.producto,
-      tamano: data.tamano,
-      categoria: data.categoria,
-      compra: Number(data.compra || 0),
-      venta: Number(data.venta || 0),
-      ganancia: Number(data.ganancia || 0),
+      tipo: data.tipo, producto: data.producto, tamano: data.tamano,
+      categoria: data.categoria, compra: Number(data.compra || 0),
+      venta: Number(data.venta || 0), ganancia: Number(data.ganancia || 0),
       estado: data.estado || ''
     }, 'perfume');
-
     if (document.getElementById('panel-rec').classList.contains('active')) {
       try { await cargarStockPerfumes(); } catch (e) {}
     }
@@ -520,84 +657,79 @@ async function handleSendPerfumes() {
   }
 }
 
-function mesLabel(fechaStr) {
-  const MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-  if (!fechaStr) return 'Sin fecha';
-
-  const parts = String(fechaStr).split(/[-\/]/);
-  if (parts.length < 2) return 'Sin fecha';
-
-  const month = parseInt(parts[1], 10);
-  if (!month || month < 1 || month > 12) return 'Sin fecha';
-
-  if (parts.length >= 3) return `${MESES[month - 1]} ${parts[2]}`;
-  return MESES[month - 1];
-}
-
+/* ══ RENDER REGISTROS (mensual) ══ */
 function renderRecords() {
   const list = document.getElementById('rec-list');
-  const total = records.reduce((s, r) => s + Number(r.ganancia || 0), 0);
+  const meses = getMesesDisponibles();
 
-  document.getElementById('sum-g').textContent = money(total);
-  document.getElementById('sum-c').textContent = records.length;
-
-  if (!records.length) {
+  if (!meses.length) {
+    document.getElementById('rec-mes-label').textContent = '—';
+    document.getElementById('sum-g').textContent = '$0';
+    document.getElementById('sum-c').textContent = '0';
+    document.getElementById('rec-ganancia-label').textContent = 'Ganancia';
+    document.getElementById('rec-ventas-label').textContent = 'Ventas';
+    document.getElementById('rec-prev-btn').disabled = true;
+    document.getElementById('rec-next-btn').disabled = true;
     list.innerHTML = '<div class="empty">Sin ventas aún.</div>';
     return;
   }
 
-  let currentMonth = '';
-  let html = '';
+  recMesIdx = Math.max(0, Math.min(meses.length - 1, recMesIdx));
+  const mesActual = getMesActual(recMesIdx);
+  const recsMes = recordsDelMes(mesActual);
 
-  records.forEach(r => {
-    const month = mesLabel(r.fecha);
+  document.getElementById('rec-mes-label').textContent = mesActual;
+  document.getElementById('rec-ganancia-label').textContent = `Ganancia ${mesActual}`;
+  document.getElementById('rec-ventas-label').textContent = `Ventas ${mesActual}`;
 
-    if (month !== currentMonth) {
-      currentMonth = month;
-      html += `<div class="month-header">${month}</div>`;
-    }
+  const totalGanancia = recsMes.reduce((s, r) => s + Number(r.ganancia || 0), 0);
+  document.getElementById('sum-g').textContent = money(totalGanancia);
+  document.getElementById('sum-c').textContent = recsMes.length;
 
-    html += `
-      <div class="ri">
-        <div class="ri-top">
-          <div class="ri-name">
-            ${r.nombre} ${r.ml}ml
-            <span class="badge-tipo badge-decant">${normGenero(r.genero)}</span>
-            ${Number(r.descuentoPct || 0) > 0 ? `<span style="font-size:11px;color:var(--red);font-weight:500">-${r.descuentoPct}%</span>` : ''}
-          </div>
-          <div class="ri-date">${r.fecha} <span class="sdot ${r.synced ? 'ok' : 'pend'}"></span></div>
+  // ‹ va hacia atrás (mes más viejo), › va hacia adelante (más reciente)
+  document.getElementById('rec-prev-btn').disabled = (recMesIdx >= meses.length - 1);
+  document.getElementById('rec-next-btn').disabled = (recMesIdx <= 0);
+
+  if (!recsMes.length) {
+    list.innerHTML = '<div class="empty">Sin ventas este mes.</div>';
+    return;
+  }
+
+  list.innerHTML = recsMes.map(r => `
+    <div class="ri">
+      <div class="ri-top">
+        <div class="ri-name">
+          <span class="ri-marca">${r.marca}</span> — ${r.nombre} ${r.ml}ml
+          <span class="badge-tipo badge-decant">${normGenero(r.genero)}</span>
+          ${Number(r.descuentoPct || 0) > 0 ? `<span style="font-size:11px;color:var(--red);font-weight:500"> -${r.descuentoPct}%</span>` : ''}
         </div>
-        <div class="ri-bot">
-          <div class="ri-detail">
-            ${r.marca} · ${money(r.costo)} → ${money(r.venta)}
-            ${Number(r.descuentoMonto || 0) > 0 ? ` · desc. ${money(r.descuentoMonto)}` : ''}
-          </div>
-          <div class="ri-gain">+${money(r.ganancia)}</div>
-        </div>
+        <div class="ri-date">${r.fecha} <span class="sdot ${r.synced ? 'ok' : 'pend'}"></span></div>
       </div>
-    `;
-  });
-
-  list.innerHTML = html;
+      <div class="ri-bot">
+        <div class="ri-detail">
+          ${money(r.costo)} → ${money(r.venta)}
+          ${Number(r.descuentoMonto || 0) > 0 ? ` · desc. ${money(r.descuentoMonto)}` : ''}
+        </div>
+        <div class="ri-gain">+${money(r.ganancia)}</div>
+      </div>
+    </div>
+  `).join('');
 }
 
+/* ══ STOCK ══ */
 function renderStockPerfumes() {
   const list = document.getElementById('stock-list');
   const kpis = document.getElementById('stock-kpis');
-
   if (!perfumeStock.length) {
     kpis.style.display = 'none';
     list.innerHTML = '<div class="empty">Sin stock disponible.</div>';
     return;
   }
-
   const totalInv = perfumeStock.reduce((s, r) => s + Number(r.compra || 0), 0);
   const totalMargen = perfumeStock.reduce((s, r) => s + Number(r.margenEsperado || 0), 0);
-
   document.getElementById('stock-inv').textContent = money(totalInv);
   document.getElementById('stock-margen').textContent = money(totalMargen);
   kpis.style.display = 'grid';
-
   list.innerHTML = perfumeStock.map(r => `
     <div class="ri">
       <div class="ri-top">
@@ -613,10 +745,121 @@ function renderStockPerfumes() {
   `).join('');
 }
 
+/* ══ STATS TOGGLE ══ */
+function setStatsMode(mode) {
+  statsMode = mode;
+  document.getElementById('stoggle-general').classList.toggle('active', mode === 'general');
+  document.getElementById('stoggle-mensual').classList.toggle('active', mode === 'mensual');
+  document.getElementById('stats-general-content').style.display = mode === 'general' ? 'block' : 'none';
+  document.getElementById('stats-mensual-content').style.display = mode === 'mensual' ? 'block' : 'none';
+  if (mode === 'general') renderStatsGeneral();
+  else renderStatsMensual();
+}
+
+/* ══ STATS MENSUAL ══ */
+function renderStatsMensual() {
+  const meses = getMesesDisponibles();
+  const body = document.getElementById('stats-mensual-body');
+
+  if (!meses.length) {
+    document.getElementById('stats-mes-label').textContent = '—';
+    document.getElementById('stats-prev-btn').disabled = true;
+    document.getElementById('stats-next-btn').disabled = true;
+    body.innerHTML = '<div class="stats-loading">Sin datos aún.</div>';
+    return;
+  }
+
+  statsMesIdx = Math.max(0, Math.min(meses.length - 1, statsMesIdx));
+  const mesActual = getMesActual(statsMesIdx);
+  const recs = recordsDelMes(mesActual);
+
+  document.getElementById('stats-mes-label').textContent = mesActual;
+  document.getElementById('stats-prev-btn').disabled = (statsMesIdx >= meses.length - 1);
+  document.getElementById('stats-next-btn').disabled = (statsMesIdx <= 0);
+
+  if (!recs.length) {
+    body.innerHTML = '<div class="empty">Sin ventas este mes.</div>';
+    return;
+  }
+
+  const totalVentas = recs.length;
+  const totalGanancia = recs.reduce((s, r) => s + Number(r.ganancia || 0), 0);
+  const avgGanancia = Math.round(totalGanancia / Math.max(totalVentas, 1));
+
+  const recM = recs.filter(r => normGenero(r.genero) === 'M');
+  const recF = recs.filter(r => normGenero(r.genero) === 'F');
+  const recU = recs.filter(r => normGenero(r.genero) === 'U');
+  const ganM = recM.reduce((s,r)=>s+Number(r.ganancia||0),0);
+  const ganF = recF.reduce((s,r)=>s+Number(r.ganancia||0),0);
+  const ganU = recU.reduce((s,r)=>s+Number(r.ganancia||0),0);
+
+  const top5 = buildTop(recs);
+  const topM = buildTop(recM);
+  const topF = buildTop(recF);
+  const topU = buildTop(recU);
+
+  const listaVentas = recs.map(r => `
+    <div class="sale-row">
+      <div>
+        <div class="sale-row-name">
+          <span style="color:var(--accent);font-weight:700">${r.marca}</span> — ${r.nombre} ${r.ml}ml
+        </div>
+        <div class="sale-row-sub">
+          ${r.fecha} · ${money(r.costo)} → ${money(r.venta)} · ${normGenero(r.genero)}
+          ${Number(r.descuentoPct||0)>0?` · -${r.descuentoPct}%`:''}
+        </div>
+      </div>
+      <div class="sale-row-gain">+${money(r.ganancia)}</div>
+    </div>
+  `).join('');
+
+  body.innerHTML = `
+    <div class="stat-title">Resumen ${mesActual}</div>
+    <div class="stat-kpis">
+      <div class="kpi"><div class="kv">${totalVentas}</div><div class="kl">Ventas</div></div>
+      <div class="kpi"><div class="kv">${money(totalGanancia)}</div><div class="kl">Ganancia</div></div>
+      <div class="kpi"><div class="kv">${money(avgGanancia)}</div><div class="kl">Promedio</div></div>
+    </div>
+
+    <div class="stat-title">Distribución de género</div>
+    <div class="gender-row">
+      <div class="gender-card m"><div class="gc-val">${recM.length}</div><div class="gc-lbl">Masculino</div></div>
+      <div class="gender-card f"><div class="gc-val">${recF.length}</div><div class="gc-lbl">Femenino</div></div>
+      <div class="gender-card u"><div class="gc-val">${recU.length}</div><div class="gc-lbl">Unisex</div></div>
+    </div>
+
+    ${renderDonut(recM.length, recF.length, recU.length)}
+
+    <div class="stat-title">Top vendidos ${mesActual}</div>
+    ${makeBarItems(top5, 'neutral')}
+
+    <div class="stat-title">Top masculinos</div>
+    ${makeBarItems(topM, 'male')}
+
+    <div class="stat-title">Top femeninos</div>
+    ${makeBarItems(topF, 'female')}
+
+    <div class="stat-title">Top unisex</div>
+    ${makeBarItems(topU, 'neutral')}
+
+    <div class="stat-title">Ganancia por género</div>
+    <div class="gender-row">
+      <div class="gender-card m"><div class="gc-val">${money(ganM)}</div><div class="gc-lbl">Masculino</div></div>
+      <div class="gender-card f"><div class="gc-val">${money(ganF)}</div><div class="gc-lbl">Femenino</div></div>
+      <div class="gender-card u"><div class="gc-val">${money(ganU)}</div><div class="gc-lbl">Unisex</div></div>
+    </div>
+
+    <div class="stat-title">Todas las ventas de ${mesActual}</div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px 14px;">
+      ${listaVentas}
+    </div>
+  `;
+}
+
+/* ══ STATS GENERAL ══ */
 function makeBarItems(items, cls) {
   if (!items.length) return '<div class="empty">Sin datos aún.</div>';
   const max = Math.max(...items.map(x => x.count), 1);
-
   return items.map(item => `
     <div class="bar-item">
       <div class="bar-label">${item.label}</div>
@@ -633,17 +876,12 @@ function makeBarItems(items, cls) {
 function buildTop(recordsSubset) {
   const map = {};
   recordsSubset.forEach(r => {
-    const key = `${r.marca} | ${r.nombre} | ${r.ml}`;
-    if (!map[key]) {
-      map[key] = { label: `${r.nombre} ${r.ml}ml`, count: 0, ganancia: 0 };
-    }
-    map[key].count += 1;
+    const key = `${r.marca}|${r.nombre}|${r.ml}`;
+    if (!map[key]) map[key] = { label: `${r.nombre} ${r.ml}ml`, count: 0, ganancia: 0 };
+    map[key].count++;
     map[key].ganancia += Number(r.ganancia || 0);
   });
-
-  return Object.values(map)
-    .sort((a, b) => b.count - a.count || b.ganancia - a.ganancia)
-    .slice(0, 5);
+  return Object.values(map).sort((a, b) => b.count - a.count || b.ganancia - a.ganancia).slice(0, 5);
 }
 
 function buildMonthlyProfit() {
@@ -653,26 +891,17 @@ function buildMonthlyProfit() {
     if (!porMes[m]) porMes[m] = 0;
     porMes[m] += Number(r.ganancia || 0);
   });
-
-  const orderMonths = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-
+  const order = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
   const arr = Object.entries(porMes).sort((a,b) => {
-    const [ma, ya='0000'] = a[0].split(' ');
-    const [mb, yb='0000'] = b[0].split(' ');
-    const ia = orderMonths.indexOf(ma);
-    const ib = orderMonths.indexOf(mb);
+    const [ma, ya='0'] = a[0].split(' ');
+    const [mb, yb='0'] = b[0].split(' ');
     if (ya !== yb) return Number(ya) - Number(yb);
-    return ia - ib;
+    return order.indexOf(ma) - order.indexOf(mb);
   });
-
   const max = Math.max(...arr.map(x => x[1]), 1);
-
   return arr.map(([mes, total]) => `
     <div class="month-bar">
-      <div class="mb-top">
-        <div class="mb-name">${mes}</div>
-        <div class="mb-val">${money(total)}</div>
-      </div>
+      <div class="mb-top"><div class="mb-name">${mes}</div><div class="mb-val">${money(total)}</div></div>
       <div class="mb-bar"><div class="mb-fill" style="width:${(total / max) * 100}%"></div></div>
     </div>
   `).join('');
@@ -683,21 +912,19 @@ function renderDonut(m, f, u) {
   const pm = (m / total) * 100;
   const pf = (f / total) * 100;
   const pu = (u / total) * 100;
-
   return `
     <div class="donut-wrap">
-      <svg width="140" height="140" viewBox="0 0 42 42" aria-hidden="true">
-        <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#1b2945" stroke-width="4"></circle>
+      <svg width="140" height="140" viewBox="0 0 42 42">
+        <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#1b2945" stroke-width="4"/>
         <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#5bc6ff" stroke-width="4"
-          stroke-dasharray="${pm} ${100 - pm}" stroke-dashoffset="25"></circle>
+          stroke-dasharray="${pm} ${100-pm}" stroke-dashoffset="25"/>
         <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#e8a0e8" stroke-width="4"
-          stroke-dasharray="${pf} ${100 - pf}" stroke-dashoffset="${25 - pm}"></circle>
+          stroke-dasharray="${pf} ${100-pf}" stroke-dashoffset="${25-pm}"/>
         <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#d4a853" stroke-width="4"
-          stroke-dasharray="${pu} ${100 - pu}" stroke-dashoffset="${25 - pm - pf}"></circle>
+          stroke-dasharray="${pu} ${100-pu}" stroke-dashoffset="${25-pm-pf}"/>
         <text x="21" y="20" text-anchor="middle" font-size="4" fill="#f0ead6" font-family="DM Sans">Total</text>
         <text x="21" y="25" text-anchor="middle" font-size="5" fill="#f0ead6" font-family="DM Mono">${m+f+u}</text>
       </svg>
-
       <div class="donut-legend">
         <div class="dl-item"><span class="dl-dot" style="background:#5bc6ff"></span> Masculino: ${m}</div>
         <div class="dl-item"><span class="dl-dot" style="background:#e8a0e8"></span> Femenino: ${f}</div>
@@ -707,16 +934,14 @@ function renderDonut(m, f, u) {
   `;
 }
 
-async function renderStats() {
+async function renderStatsGeneral() {
   if (statsLoaded) return;
-
-  const wrap = document.getElementById('stats-content');
+  const wrap = document.getElementById('stats-general-content');
   wrap.innerHTML = '<div class="stats-loading">Cargando estadísticas…</div>';
 
   if (!records.length) {
     try { await cargarHistorialDesdeSheets(); } catch (e) {}
   }
-
   if (!records.length) {
     wrap.innerHTML = '<div class="stats-loading">Sin datos aún.</div>';
     return;
@@ -725,17 +950,13 @@ async function renderStats() {
   const totalVentas = records.length;
   const totalGanancia = records.reduce((s, r) => s + Number(r.ganancia || 0), 0);
   const avgGanancia = Math.round(totalGanancia / Math.max(totalVentas, 1));
-
   const top5 = buildTop(records);
-
   const recM = records.filter(r => normGenero(r.genero) === 'M');
   const recF = records.filter(r => normGenero(r.genero) === 'F');
   const recU = records.filter(r => normGenero(r.genero) === 'U');
-
   const topM = buildTop(recM);
   const topF = buildTop(recF);
   const topU = buildTop(recU);
-
   const ganM = recM.reduce((s,r)=>s+Number(r.ganancia||0),0);
   const ganF = recF.reduce((s,r)=>s+Number(r.ganancia||0),0);
   const ganU = recU.reduce((s,r)=>s+Number(r.ganancia||0),0);
@@ -779,38 +1000,32 @@ async function renderStats() {
     <div class="stat-title">Ganancia por mes</div>
     ${buildMonthlyProfit() || '<div class="empty">Sin datos aún.</div>'}
   `;
-
   statsLoaded = true;
 }
 
+/* ══ CSV ══ */
 function exportCSV() {
-  if (!records.length) {
-    alert('No hay registros.');
-    return;
-  }
-
+  if (!records.length) { alert('No hay registros.'); return; }
   let s = 0;
   const BOM = '\uFEFF';
   const header = 'Fecha,Descripción,Cantidad,Monto ($),Saldo ($),Tipo,Categoría,Genero\n';
-
   const body = [...records].reverse().map(r => {
     s += Number(r.ganancia || 0);
     return `${r.fecha},"${r.nombre} ${r.ml}ML",${r.ml} ML,"${money(r.ganancia)}","${money(s)}",INGRESO,VENTAS,${normGenero(r.genero)}`;
   }).join('\n');
-
-  const fullBlob = new Blob([BOM + header + body], { type:'text/csv;charset=utf-8;' });
+  const blob = new Blob([BOM + header + body], { type:'text/csv;charset=utf-8;' });
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(fullBlob);
+  a.href = URL.createObjectURL(blob);
   a.download = `ventas_${getDate()}.csv`;
   a.click();
 }
 
+/* ══ SHEETS ══ */
 async function cargarHistorialDesdeSheets() {
   const data = await llamarScript('historial');
-  records = (data.records || []).map(r => ({
-    ...r,
-    genero: normGenero(r.genero)
-  }));
+  records = (data.records || []).map(r => ({ ...r, genero: normGenero(r.genero) }));
+  recMesIdx = 0;
+  statsMesIdx = 0;
   renderRecords();
 }
 
@@ -820,14 +1035,17 @@ async function cargarStockPerfumes() {
   renderStockPerfumes();
 }
 
+/* ══ INIT ══ */
+async function init() {
+  document.getElementById('script-url').value = SCRIPT_URL;
+  try { await cargarHistorialDesdeSheets(); } catch (e) { renderRecords(); }
+}
+
 init();
 
-// Registro del Service Worker (PWA)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
-      .then(reg => console.log('SW registrado:', reg.scope))
-      .catch(err => console.warn('SW error:', err));
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
   });
 }
 </script>
